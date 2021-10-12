@@ -18,15 +18,20 @@ public class Car {
 		}
 	}
 
+	public boolean run(int randomNum) {
+		if (randomNum > 3 && randomNum < 10) {
+			this.score++;
+
+			return true;
+		}
+		return false;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public int getScore() {
 		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
 	}
 }

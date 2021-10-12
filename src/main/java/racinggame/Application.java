@@ -11,6 +11,9 @@ public class Application {
 
             System.out.println("시도할 회수는 몇회인가요?");
             int roundNum = new InputUtil().validateNumber(Console.readLine());
+
+            PlayGame playGame = new PlayGame();
+            playGame.play(carList, roundNum);
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] " + e.getMessage());
         }

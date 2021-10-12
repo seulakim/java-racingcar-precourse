@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import nextstep.utils.Randoms;
+
 public class CarList {
 
 	static final String SPLIT_REGEX = ",";
@@ -52,5 +54,11 @@ public class CarList {
 		}
 
 		return nameList;
+	}
+
+	public void createRandomNum() {
+		for (Car car : carList) {
+			car.run(Randoms.pickNumberInRange(0, 9));
+		}
 	}
 }
