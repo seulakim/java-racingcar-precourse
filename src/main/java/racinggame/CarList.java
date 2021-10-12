@@ -61,4 +61,11 @@ public class CarList {
 			car.run(Randoms.pickNumberInRange(0, 9));
 		}
 	}
+
+	public void printScore() {
+		for (Car car : carList) {
+			System.out.println(car.getStatus());
+		}
+		System.out.println();
+	}
 }

@@ -39,4 +39,12 @@ public class CarTest {
 	void 자동차_전진_멈춤(int num, boolean expected) {
 		assertThat(car.run(num)).isEqualTo(expected);
 	}
+
+	@Test
+	void 현재_스코어_출력() {
+		assertThat(car.getStatus()).isEqualTo("car : ");
+
+		car.setScore(3);
+		assertThat(car.getStatus()).isEqualTo("car : ---");
+	}
 }

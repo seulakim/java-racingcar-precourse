@@ -27,11 +27,25 @@ public class Car {
 		return false;
 	}
 
+	public String getStatus() {
+		String status = name + " : ";
+
+		for (int i = 0; i < score; i++) {
+			status += "-";
+		}
+
+		return status;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public int getScore() {
 		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 }
