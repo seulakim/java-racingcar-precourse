@@ -1,5 +1,7 @@
 package racinggame;
 
+import java.util.List;
+
 public class Car {
 	final int CAR_NAME_LENGTH = 5;
 
@@ -13,7 +15,7 @@ public class Car {
 	};
 
 	public void validateLength(String name) {
-		if (name.length() > CAR_NAME_LENGTH) {
+		if (name.isEmpty() || name.length() > CAR_NAME_LENGTH) {
 			throw new IllegalArgumentException("각 " + CAR_NAME_LENGTH + "자 이하로 입력해주세요.");
 		}
 	}
@@ -37,12 +39,16 @@ public class Car {
 		return status;
 	}
 
-	public String getName() {
-		return name;
+	public List<String> getNameByScore(List<String> winnerList, int score) {
+		if (this.score == score) {
+			winnerList.add(name);
+		}
+
+		return winnerList;
 	}
 
-	public int getScore() {
-		return score;
+	public String getName() {
+		return name;
 	}
 
 	public void setScore(int score) {

@@ -2,6 +2,9 @@ package racinggame;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -46,5 +49,17 @@ public class CarTest {
 
 		car.setScore(3);
 		assertThat(car.getStatus()).isEqualTo("car : ---");
+	}
+
+	@Test
+	void 해당_점수인_자동차이름() {
+		List<String> winnerList = new ArrayList<>();
+
+		car.setScore(2);
+		assertThat(car.getNameByScore(winnerList, 3)).isEqualTo(winnerList);
+
+		car.setScore(3);
+		winnerList.add(car.getName());
+		assertThat(car.getNameByScore(winnerList, 3)).isEqualTo(winnerList);
 	}
 }

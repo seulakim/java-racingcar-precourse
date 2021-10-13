@@ -42,4 +42,10 @@ public class CarListTest {
 		assertThatIllegalArgumentException()
 			.isThrownBy(() -> carList.validateDuplicate(cars));
 	}
+
+	@Test
+	void 자동차_이름() {
+		assertThatIllegalArgumentException()
+			.isThrownBy(() -> carList.validateDuplicate(cars));
+	}
 }
